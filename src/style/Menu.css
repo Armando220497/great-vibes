@@ -1,0 +1,105 @@
+.body-menu {
+  background-image: url("/wallpaper-menu.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Poppins', sans-serif; /* Applica Poppins */
+
+
+}
+
+.overlay-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(18, 18, 18, 0.5);
+  z-index: 1;
+}
+
+.content-menu {
+    position: relative; /* Mantieni il contenuto centrale sopra l'overlay */
+    z-index: 1; /* Lo tieni sotto la navbar */
+    color: white;
+    text-align: center;
+
+}
+
+.title-menu {
+  font-family: 'Great Vibes', cursive;
+  font-size: 4rem;
+  font-weight: 500;
+  color: rgb(255, 255, 255);
+  margin-bottom:3% ;
+  margin-top: 2vh;
+}
+
+.menu-container {
+  margin-top: 20vh;
+  max-height: 70vh;
+  overflow-y: auto;
+  background-color: transparent;
+  border-radius: 15px;
+  padding: 2rem;
+}
+
+.menu-item {
+  display: flex;
+  
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+
+}
+
+.menu-item-left {
+  flex: 1;
+}
+
+.menu-item-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+
+  
+}
+
+.menu-item-description {
+  font-size: 1rem;
+  color: #ddd;
+}
+
+.menu-item-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-left: 1rem;
+}
+
+/* Stile per la scrollbar */
+.menu-container::-webkit-scrollbar {
+  width: 12px;
+}
+
+.menu-container::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.menu-container::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.menu-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 1);
+}
+
+
+

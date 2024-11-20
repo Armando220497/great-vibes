@@ -1,0 +1,123 @@
+[
+    {
+      "category": "Cocktail",
+      "items": [
+        {
+          "name": "Mojito",
+          "description": "Rum bianco, lime, menta fresca, zucchero di canna e soda.",
+          "price": "€8.00"
+        },
+        {
+          "name": "Negroni",
+          "description": "Gin, Campari e vermouth rosso.",
+          "price": "€9.00"
+        },
+        {
+          "name": "Margarita",
+          "description": "Tequila, triple sec, succo di lime e sale.",
+          "price": "€10.00"
+        },
+        {
+          "name": "Daiquiri",
+          "description": "Rum bianco, succo di lime e zucchero.",
+          "price": "€7.50"
+        },
+        {
+          "name": "Pina Colada",
+          "description": "Rum bianco, crema di cocco e succo d'ananas.",
+          "price": "€8.00"
+        },
+        {
+          "name": "Mai Tai",
+          "description": "Rum scuro, rum chiaro, succo di lime, orzata e curaçao d'arancia.",
+          "price": "€11.00"
+        },
+        {
+          "name": "Cosmopolitan",
+          "description": "Vodka, triple sec, succo di mirtillo e lime.",
+          "price": "€8.50"
+        },
+        {
+          "name": "Long Island Iced Tea",
+          "description": "Vodka, gin, rum bianco, tequila, triple sec, succo di limone e cola.",
+          "price": "€12.00"
+        },
+        {
+          "name": "Tequila Sunrise",
+          "description": "Tequila, succo d'arancia e sciroppo di granatina.",
+          "price": "€7.50"
+        },
+        {
+          "name": "Bloody Mary",
+          "description": "Vodka, succo di pomodoro, succo di limone, salsa Worcestershire, tabasco, sale e pepe.",
+          "price": "€8.50"
+        }
+      ]
+    },
+    {
+      "category": "Amari",
+      "items": [
+        {
+          "name": "Amaro del Capo",
+          "description": "Amaro calabrese dal gusto intenso e aromatico.",
+          "price": "€5.00"
+        },
+        {
+          "name": "Fernet Branca",
+          "description": "Amaro dal sapore intenso e unico.",
+          "price": "€6.00"
+        },
+        {
+          "name": "Averna",
+          "description": "Amaro siciliano dal gusto rotondo e armonico.",
+          "price": "€5.50"
+        },
+        {
+          "name": "Lucano",
+          "description": "Amaro erbaceo con note dolci e amare.",
+          "price": "€5.00"
+        },
+        {
+          "name": "Montenegro",
+          "description": "Amaro classico italiano, dolce e aromatico.",
+          "price": "€5.50"
+        }
+      ]
+    },
+    {
+      "category": "Vini",
+      "items": [
+        {
+          "name": "Chianti",
+          "description": "Vino rosso toscano dal sapore deciso.",
+          "price": "€4.50"
+        },
+        {
+          "name": "Prosecco",
+          "description": "Spumante italiano dal gusto fresco e fruttato.",
+          "price": "€5.00"
+        },
+        {
+          "name": "Pinot Grigio",
+          "description": "Vino bianco elegante e dal gusto delicato.",
+          "price": "€4.00"
+        },
+        {
+          "name": "Barolo",
+          "description": "Vino rosso piemontese, corposo e raffinato.",
+          "price": "€7.00"
+        },
+        {
+          "name": "Moscato d'Asti",
+          "description": "Vino dolce e aromatico con note fruttate.",
+          "price": "€5.50"
+        },
+        {
+          "name": "Franciacorta",
+          "description": "Spumante metodo classico, elegante e complesso.",
+          "price": "€6.00"
+        }
+      ]
+    }
+  ]
+  

@@ -1,0 +1,16 @@
+*{user-select: none;}
+
+h1, h2, h3 {
+  font-weight: 700; /* Titoli più spessi per maggiore impatto */
+}
+
+p {
+  font-weight: 300; /* Testo normale più sottile per leggibilità */
+  line-height: 1.6; /* Migliora la leggibilità */
+}
+
+body {
+  background-color: #121212 !important;
+}
+
+

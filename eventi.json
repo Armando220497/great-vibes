@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "title": "Spritz Night",
+    "date": "25 Novembre",
+    "description": "Un'intera serata dedicata allo Spritz, con varianti esclusive!",
+    "image": "/spritz.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Gin Mare Experience",
+    "date": "1 Dicembre",
+    "description": "Scopri i sapori mediterranei con il nostro Gin Mare, servito con abbinamenti unici.",
+    "image": "/gin-mare.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Live Music & Cocktails",
+    "date": "8 Dicembre",
+    "description": "Goditi una serata con musica dal vivo e cocktail preparati al momento.",
+    "image": "/live-music.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Happy Hour Special",
+    "date": "Tutti i giorni 18:00 - 20:00",
+    "description": "Cocktail a metà prezzo durante l'happy hour. Non perdere l'occasione!",
+    "image": "/happy-hour.jpg"
+  }
+]
