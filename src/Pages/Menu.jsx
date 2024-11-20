@@ -4,6 +4,7 @@ import "../style/Menu.css";
 
 function Menu() {
   const [menu, setMenu] = useState([]);
+  const [navbarHeight, setNavbarHeight] = useState(0);
 
   useEffect(() => {
     fetch("/menu.json")
@@ -14,11 +15,20 @@ function Menu() {
       );
   }, []);
 
+  const handleNavbarToggle = (isExpanded) => {
+    // Cambia il margin-top in base allo stato della navbar
+    if (isExpanded) {
+      setNavbarHeight(150); // Altezza quando la navbar è espansa
+    } else {
+      setNavbarHeight(0); // Rimuove il margine quando la navbar è chiusa
+    }
+  };
+
   return (
     <div className="body-menu">
       <div className="overlay-menu"></div>
-      <NavbarCustom />
-      <div className="content-menu">
+      <NavbarCustom onToggle={handleNavbarToggle} />
+      <div className="content-menu" style={{ marginTop: `${navbarHeight}px` }}>
         <div className="menu-container">
           {menu.map((category, categoryIndex) => (
             <div key={categoryIndex}>

@@ -14,3 +14,15 @@ body {
 }
 
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* Assicura che padding e bordi siano inclusi nelle dimensioni degli elementi */
+}
+
+body, html {
+  overflow-x: hidden; /* Evita lo scroll orizzontale su tutta la pagina */
+  margin: 0;
+  padding: 0;
+  width: 100%; /* Assicura che il body non superi la larghezza dello schermo */
+}

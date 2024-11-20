@@ -1,147 +1,185 @@
+/* Stile generale per il body della home */
 .body-home {
-    background-image: url("/wallpaper.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    overflow: hidden;
-    height: 100vh;
- 
-    
-    
+  background-image: url("/wallpaper.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  padding-top: 60px; /* Compensa l'altezza della navbar quando è chiusa */
+  transition: padding-top 0.3s ease-in-out;
 }
 
-.overlay-home {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(18, 18, 18, 0.5); /* Aggiunge un colore semi-trasparente */
-    z-index: 1; /* Overlay sullo sfondo ma sotto la navbar */
+/* Quando la navbar è espansa su schermi piccoli */
+.body-home.navbar-expanded {
+  padding-top: 200px; /* Aggiungi spazio per la navbar espansa */
 }
 
-.navbar-custom {
-    position: relative; /* La navbar deve stare sopra l'overlay */
-    z-index: 2;
+.scroll-down {
+  position: absolute;
+  bottom: 20px; /* Posiziona l'icona vicino al bordo inferiore */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2; /* Deve stare sopra l'overlay */
+  text-align: center;
+  color: rgba(255, 255, 255, 0.618);
 }
 
-.content-home {
-    position: relative; /* Mantieni il contenuto centrale sopra l'overlay */
-    z-index: 1; /* Lo tieni sotto la navbar */
-    color: white;
-    text-align: center;
-}
 .title {
-    font-family: 'Great Vibes', cursive;
-    font-size: 9.5rem;
-    font-weight: 500;
-    color: rgb(255, 255, 255);
-    text-align: center;
-    margin-top: 25vh;
+  font-family: 'Great Vibes', cursive;
+  font-size: 9.5rem;
+  font-weight: 500;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  margin-top: 25vh;
+
 }
+
 
 .benvenuti-titolo{
-    font-family: 'Great Vibes', cursive;
-    font-size: 4rem;
-    font-weight: 500;
-    color: rgb(255, 255, 255);
-    text-align: center;
-    text-decoration: underline 2px;
+  font-family: 'Great Vibes', cursive;
+  font-size: 4rem;
+  font-weight: 500;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  text-decoration: underline 2px;
+}
+.scroll-down i {
+  font-size: 5rem; /* Dimensione dell'icona */
+  animation: bounce 2s infinite; /* Aggiunge un effetto rimbalzo */
 }
 
-/* Definizione dell'animazione */
-@keyframes pulse {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
+/* Animazione di rimbalzo */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
+/* Overlay per il contenuto della home */
+.overlay-home {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(18, 18, 18, 0.5);
+  z-index: 1; /* Overlay sotto la navbar */
+}
+
+/* Contenuto della home */
+.content-home {
+  position: relative;
+  z-index: 2; /* Assicurati che il contenuto sia sopra l'overlay */
+  color: white;
+  text-align: center;
+}
+
+.container-presentazione {
+ color: white;
+ font-family: 'Poppins', sans-serif; /* Applica Poppins */
+ font-weight: 300;
+  font-size: 0.9rem;
+ margin-top: 10vh;
+ 
+}
+
+/* Titolo della home */
+.title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 9.5rem;
+  font-weight: 500;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  margin-top: 25vh;
+}
 
 .social a{
-    justify-content: center;
-    margin-top: 20px;
-    color: white;
-    font-size: 2.0rem;
-    text-decoration: none;
-    padding: 10px;
-    padding-top: 0px;
+  justify-content: center;
+  margin-top: 20px;
+  color: white;
+  font-size: 2.0rem;
+  text-decoration: none;
+  padding: 10px;
+  padding-top: 0px;
 }
 
 .social a:hover{
-    transform: scale(1.2);
-    transition: all 0.2s ease-in-out;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-.container-presentazione{
-  color: white;
-  font-family: 'Poppins', sans-serif; /* Applica Poppins */
-  font-weight: 300;
-  font-size: 0.9rem;
-  margin-top: 10vh;
-  height: 90vh;
+  transform: scale(1.2);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .proprietario-img-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%; /* Adatta all'altezza del contenitore */
-    width: 100%;
-  }
-  
-  .proprietario-img {
-    background-image: url("/proprietario.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 100%; /* Si ridimensiona automaticamente */
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Adatta all'altezza del contenitore */
+  width: 100%;
+}
 
-.scroll-down {
-    position: absolute;
-    bottom: 20px; /* Posiziona l'icona vicino al bordo inferiore */
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2; /* Deve stare sopra l'overlay */
-    text-align: center;
-    color: rgba(255, 255, 255, 0.618);
-  }
-  
-  .scroll-down i {
-    font-size: 5rem; /* Dimensione dell'icona */
-    animation: bounce 2s infinite; /* Aggiunge un effetto rimbalzo */
-  }
-  
-  /* Animazione di rimbalzo */
-  @keyframes bounce {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  }
-  
+.proprietario-img {
+  background-image: url("/proprietario.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%; /* Si ridimensiona automaticamente */
+}
 
+/* Media query per schermi piccoli (fino a 768px) */
 @media screen and (max-width: 768px) {
-    .proprietario-img{
-   
-            background-image: url("/proprietario.jpg");
-            background-size: cover;
-            background-position: center;
-            height: 300px; /* Altezza fissa per l'immagine */
-            width: 100%; /* Occupa tutta la larghezza */
-            margin-top: 20px;
-            margin-bottom: 20px;
-            
-          
-    }
-    
+  .body-home {
+      padding-top: 60px; /* Padding standard per navbar chiusa */
+  }
+
+  .body-home.navbar-expanded {
+      padding-top: 200px; /* Padding aumentato per navbar espansa */
+  }
+
+  .title {
+      font-size: 3rem; /* Dimensione del testo più piccola per cellulari */
+      margin-top: 30vh; /* Compensa il margine superiore su dispositivi mobili */
+  }
+
+  .proprietario-img {
+      height: 300px; /* Altezza fissa per l'immagine su schermi piccoli */
+      width: 100%; /* Occupa tutta la larghezza del contenitore */
+      background-size: cover; /* Assicura che l'immagine copra tutto il contenitore */
+      margin-top: 20px;
+      margin-bottom: 20px;
+  }
+
+  .proprietario-img-wrapper {
+      height: auto; /* Imposta l'altezza automatica del wrapper */
+  }
+}
+
+/* Media query per tablet (da 769px a 1000px) */
+@media screen and (min-width: 769px) and (max-width: 1000px) {
+  .body-home {
+      padding-top: 100px; /* Margine medio per tablet */
+  }
+
+  .body-home.navbar-expanded {
+      padding-top: 220px; /* Padding maggiore quando la navbar è espansa su tablet */
+  }
+
+  .title {
+      font-size: 5rem; /* Dimensione media per tablet */
+  }
+
+  .proprietario-img {
+      height: 400px; /* Altezza per tablet, leggermente maggiore rispetto ai cellulari */
+      width: 100%;
+      background-size: cover; /* Assicura che l'immagine copra tutto il contenitore */
+  }
+
+  .proprietario-img-wrapper {
+      height: auto; /* Imposta l'altezza automatica del wrapper */
+  }
 }

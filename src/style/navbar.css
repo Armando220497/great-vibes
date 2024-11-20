@@ -1,16 +1,23 @@
+/* Navbar Styles */
 .navbar {
   background-color: transparent !important; /* Sfondo trasparente */
   font-family: 'Poppins', sans-serif; /* Applica Poppins */
   padding: 15px 20px; /* Margini interni */
-  position: absolute; /* Fissa la navbar in alto */
-  top: 0; /* Posiziona la navbar all'inizio della pagina */
-  left: 0; /* Allinea la navbar a sinistra */
   width: 100%; /* Occupa l'intera larghezza */
   z-index: 100; /* Assicura che sia sopra tutto */
+  position: absolute ! important;
+  top: 0;
+
+ 
 }
 
-
-.custom-navbar-link {
+.navbar-toggler:focus, .navbar-toggler:active {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+/* Link della navbar */
+.custom-navbar-link .nav-link {
   color: white !important;
   font-weight: 300;
   font-size: 25px;
@@ -22,11 +29,64 @@
   transition: all 0.2s ease-in-out;
 }
 
-.orari{
-  position: fixed;
-  top: 0;
-  right: 0;
-  margin-right: 10px;
+/* Orari apertura */
+.orari {
+  color: white;
+  font-size: 1rem;
+}
 
+.container {
+margin: 0;
+padding: 0; 
+}
+
+/* Toggle Icon */
+.toggle-icon {
+  color: #ffffff;
+  font-size: 2rem;
+  border: none; /* Rimuove il bordo del bottone di toggle */
+  outline: none; /* Rimuove eventuali contorni di messa a fuoco */
+  box-shadow: none; /* Rimuove l'ombra del bordo */
+}
+
+/* Media query per schermi piccoli */
+@media screen and (max-width: 768px) {
+  .custom-navbar-link {
+    text-align: center;
   }
 
+.navbar-toggler{
+  box-shadow: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+
+}
+
+  .orari {
+    display: none; /* Nasconde gli orari di apertura su schermi piccoli */
+  }
+
+  .container {
+    margin-left: 0px; /* Assicurati che la larghezza sia ben gestita per tablet */
+    text-align: start;
+    justify-content: start;
+    
+  }
+
+  .custom-navbar-link .nav-link {
+    margin-left: 0; /* Rimuove il margin-right per schermi piccoli */
+    padding-left: 0;
+    justify-content: start;
+    text-align: start;
+    font-size: 20px;
+  }
+
+  
+}
+
+@media screen and (min-width: 769px) and (max-width: 1000px) {
+  .orari {
+    display: none; /* Nasconde gli orari di apertura su schermi piccoli */
+  }
+}

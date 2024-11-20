@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import "../style/Gallery.css";
 import NavbarCustom from "../components/navbar";
@@ -12,10 +13,18 @@ function Gallery() {
     { url: "/gallery6.jpg", caption: "La nostra atmosfera" },
   ];
 
+  const [isNavbarExpanded, setIsNavbarExpanded] = useState(false);
+
+  const handleNavbarToggle = (isExpanded) => {
+    setIsNavbarExpanded(isExpanded);
+  };
+
   return (
-    <div className="body-gallery">
+    <div
+      className={`body-gallery ${isNavbarExpanded ? "navbar-expanded" : ""}`}
+    >
       <div className="overlay-gallery"></div>
-      <NavbarCustom />
+      <NavbarCustom onToggle={handleNavbarToggle} />
       <Container fluid className="gallery-container py-5">
         <h1 className="text-center gallery-title mb-5">
           Scopri il nostro locale

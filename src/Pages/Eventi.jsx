@@ -5,6 +5,7 @@ import NavbarCustom from "../components/navbar";
 
 function Events() {
   const [events, setEvents] = useState([]);
+  const [navbarHeight, setNavbarHeight] = useState(0);
 
   useEffect(() => {
     fetch("/eventi.json") // Percorso del file JSON
@@ -15,10 +16,22 @@ function Events() {
       );
   }, []);
 
+  const handleNavbarToggle = (isExpanded) => {
+    if (isExpanded) {
+      setNavbarHeight(150); // Altezza quando la navbar è espansa
+    } else {
+      setNavbarHeight(0); // Rimuove il margine quando la navbar è chiusa
+    }
+  };
+
   return (
     <div className="body-events">
-      <NavbarCustom />
-      <Container fluid className="events-page px-5">
+      <NavbarCustom onToggle={handleNavbarToggle} />
+      <Container
+        fluid
+        className="events-page px-5"
+        style={{ paddingTop: `${navbarHeight}px` }}
+      >
         <section className="featured-events py-5">
           <h2 className="text-center eventi-title mb-5">
             Eventi del Great Vibes

@@ -1,12 +1,19 @@
+import { useState } from "react";
 import NavbarCustom from "../components/navbar.jsx";
 import "../style/Home.css";
+
 function Home() {
+  const [isNavbarExpanded, setIsNavbarExpanded] = useState(false);
+
+  const handleNavbarToggle = (isExpanded) => {
+    setIsNavbarExpanded(isExpanded);
+  };
+
   return (
     <>
-      <NavbarCustom />
-      <div className="body-home">
+      <NavbarCustom onToggle={handleNavbarToggle} />
+      <div className={`body-home ${isNavbarExpanded ? "navbar-expanded" : ""}`}>
         <div className="overlay-home"></div>
-
         <div className="content-home">
           <h1 className="title">Great Vibes</h1>
           <div className="social">
@@ -29,14 +36,20 @@ function Home() {
         </div>
       </div>
 
-      <section>
+      <section
+        style={{
+          justifyContent: "center",
+          alignItems: "center",
+          display: "flex",
+        }}
+      >
         <div className="container-presentazione container ">
           <div className="row">
-            <div className="col-12 col-md-6 mb-4 ">
+            <div className="col-12 col-md-6 mb-4 col-style-query">
               <h3 className="mb-4 benvenuti-titolo">
                 Benvenuti al Great Vibes!
               </h3>
-              <p>
+              <p style={{ textAlign: "start", marginLeft: "10px" }}>
                 Se stai cercando un luogo dove vivere momenti indimenticabili,
                 il <strong>Great Vibes Bar</strong> è la tua destinazione
                 ideale. Situato in una posizione accogliente e moderna, il
@@ -85,7 +98,7 @@ function Home() {
                 </li>
               </ul>
             </div>
-            <div className="col-12 col-md-6">
+            <div className="col-12 col-md-6 col-style-query">
               <div className="proprietario-img-wrapper">
                 <div className="proprietario-img"></div>
               </div>

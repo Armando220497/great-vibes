@@ -1,13 +1,15 @@
+/* Menu CSS */
+
+/* Stile generale del menu */
 .body-menu {
   background-image: url("/wallpaper-menu.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  overflow: hidden;
-  height: 100vh;
+  overflow: hidden ;
+  min-height: 100vh; /* Usare min-height per permettere alla pagina di estendersi */
   margin: 0;
   font-family: 'Poppins', sans-serif; /* Applica Poppins */
-
 
 }
 
@@ -22,11 +24,12 @@
 }
 
 .content-menu {
-    position: relative; /* Mantieni il contenuto centrale sopra l'overlay */
-    z-index: 1; /* Lo tieni sotto la navbar */
-    color: white;
-    text-align: center;
-
+  position: relative; /* Mantieni il contenuto centrale sopra l'overlay */
+  z-index: 2; /* Assicurati che sia sopra l'overlay e la navbar */
+  color: white;
+  text-align: center;
+  transition: margin-top 0.3s ease-in-out; /* Aggiungi una transizione per rendere il cambiamento graduale */
+  padding: 2rem; /* Margini interni per evitare sovrapposizioni */
 }
 
 .title-menu {
@@ -34,27 +37,28 @@
   font-size: 4rem;
   font-weight: 500;
   color: rgb(255, 255, 255);
-  margin-bottom:3% ;
+  margin-bottom: 3%;
   margin-top: 2vh;
 }
 
 .menu-container {
-  margin-top: 20vh;
   max-height: 70vh;
   overflow-y: auto;
   background-color: transparent;
-  border-radius: 15px;
   padding: 2rem;
+  margin-top: 20vh;
+  padding-left: 0px;
 }
 
+/* Stile per menu-item */
 .menu-item {
   display: flex;
-  
   justify-content: space-between;
   align-items: center;
   padding: 1rem 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   color: white;
+  
 
 }
 
@@ -66,8 +70,6 @@
   font-size: 1.4rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
-
-  
 }
 
 .menu-item-description {
@@ -101,5 +103,43 @@
   background: rgba(255, 255, 255, 1);
 }
 
+/* Media query per schermi piccoli e tablet */
 
+/* Cellulari (fino a 768px) */
+@media screen and (max-width: 768px) {
+  .content-menu {
+    margin-top: calc(15vh + 50px); /* Compensa l'altezza della navbar */
+    transition: margin-top 0.3s ease-in-out; /* Aggiungi una transizione per rendere il  }
 
+  .title-menu {
+    font-size: 3rem; /* Dimensione più piccola per cellulari */
+  }
+
+  .navbar-collapse {
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease-in-out; /* Anima il movimento quando si espande/collassa */
+  }
+
+  .menu-container {
+    margin-top: 15vh;
+    padding-top: 0px;
+  }
+
+  .body-menu {
+    background-size: cover;
+    background-position: center;
+  }
+
+}
+
+/* Tablet (da 769px a 1000px) */
+@media screen and (min-width: 769px) and (max-width: 1000px) {
+  .content-menu {
+    margin-top: 150px; /* Margine medio per tablet */
+  }
+
+  .title-menu {
+    font-size: 5rem; /* Dimensione media per tablet */
+  }
+}
