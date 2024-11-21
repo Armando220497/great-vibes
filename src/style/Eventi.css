@@ -1,5 +1,3 @@
-/* Eventi CSS */
-
 /* Stile generale del body per la pagina Eventi */
 .body-events {
   position: relative; /* Per contenere l'overlay */
@@ -10,6 +8,12 @@
   background-size: cover;
   overflow: hidden;
   z-index: 1; /* Assicura che il contenuto sia sotto la navbar */
+  transition: padding-top 0.3s ease-in-out; /* Aggiunta transizione per il padding-top */
+}
+
+/* Navbar espansa - modifica dinamica tramite JavaScript */
+.body-events.navbar-expanded {
+  padding-top: 50vh; /* Aggiungi abbastanza spazio quando la navbar è espansa */
 }
 
 /* Titolo eventi */
@@ -21,6 +25,7 @@
   margin-bottom: 3%;
   text-decoration: underline 2px;
   margin-top: 8vh;
+  transition: all 0.3s ease-in-out; /* Aggiunta transizione per la fluidità */
 }
 
 /* Stile delle card degli eventi */
@@ -34,6 +39,12 @@
   display: flex;
   flex-direction: column; /* Per garantire che l'immagine e il contenuto siano in colonna */
   height: 100%; /* Garantisce che tutte le card abbiano la stessa altezza */
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out; /* Fluidità hover */
+}
+
+.card:hover {
+  transform: scale(1.05);
+  background-color: rgba(128, 128, 128, 0.35) !important; /* Aggiunta di un leggero effetto hover */
 }
 
 /* Media query per schermi piccoli e tablet */
@@ -42,10 +53,12 @@
 @media screen and (max-width: 768px) {
   .events-page {
     padding-top: 150px; /* Aggiungi padding-top solo per compensare la navbar espansa */
+    transition: padding-top 0.3s ease-in-out; /* Transizione per rendere il movimento più fluido */
   }
 
   .eventi-title {
     font-size: 3rem; /* Dimensione più piccola per cellulari */
+    padding-top: 5vh;
   }
 
   .navbar-collapse {
@@ -54,11 +67,16 @@
     transition: all 0.3s ease-in-out; /* Anima il movimento quando si espande/collassa */
   }
 
-  .body-events{
+  .body-events {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    transition: padding-top 0.3s ease-in-out; /* Migliora la fluidità del padding-top */
+  }
+
+  .body-events.navbar-expanded {
+    padding-top: 50vh; /* Espandi il padding in modo fluido per la navbar espansa */
   }
 }
 
@@ -70,5 +88,9 @@
 
   .eventi-title {
     font-size: 5rem; /* Dimensione media per tablet */
+  }
+
+  .body-events.navbar-expanded {
+    padding-top: 200px; /* Espandi il padding in modo sufficiente per tablet */
   }
 }

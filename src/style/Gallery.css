@@ -1,17 +1,26 @@
+
+/* Body della galleria */
 .body-gallery {
   color: white;
-  min-height: 100vh; /* Usa min-height per permettere alla pagina di estendersi */
-  padding-top: 60px; /* Padding fisso per compensare l'altezza della navbar quando è chiusa */
+  min-height: 100vh; /* Cambiato da height a min-height per abilitare lo scroll */
+  padding-top: 60px;
   background-image: url("/gallery-wallpaper.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
-  overflow: hidden;
+  overflow: visible; /* Cambiato da hidden a visible per permettere lo scroll */
   display: flex;
   flex-direction: column;
-  transition: padding-top 0.3s ease-in-out; /* Transizione per il padding-top */
-  z-index: 1; /* Aggiunta per gestire l'overlay */
+  justify-content: center; /* Centra verticalmente tutto il contenuto */
+  align-items: center; /* Centra orizzontalmente tutto il contenuto */
+  transition: padding-top 0.3s ease-in-out;
+  z-index: 1; /* Sfondo più basso di tutto */
+}
+
+/* Navbar espansa: aggiungi una classe per aumentare lo spazio */
+.body-gallery.navbar-expanded {
+  padding-top: 70vh; /* Aumenta il padding-top per lasciare abbastanza spazio alla navbar espansa */
 }
 
 /* Overlay */
@@ -21,8 +30,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(18, 18, 18, 0.7); /* Opacità dell'overlay */
-  z-index: 2; /* Aumenta l'indice per assicurare che sia sopra l'immagine di sfondo */
+  background-color: rgba(18, 18, 18, 0.7);
+  z-index: 2; /* Assicurati che l'overlay sia sotto le card */
 }
 
 /* Titolo della galleria */
@@ -34,95 +43,163 @@
   z-index: 3;
   position: relative;
   text-decoration: underline 2px;
+  margin-bottom: 20px; /* Riduci il margine per limitare lo spazio */
 }
 
 /* Contenitore immagini */
 .gallery-container {
-  max-width: 1200px;
+  max-width: 1100px;
+  width: 100%;
   text-align: center;
   z-index: 3; /* Assicurati che il contenuto sia sopra l'overlay */
   position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centra le card orizzontalmente */
+  align-items: center; /* Centra le card verticalmente */
+  gap: 20px; /* Spazio tra le card */
 }
 
-/* Card della galleria */
+/* Contenitore card della galleria */
 .gallery-card {
+  perspective: 1000px;
+  width: 300px; /* Larghezza fissa per assicurare che la card sia visibile */
+  height: 200px; /* Altezza fissa per tutte le card */
   position: relative;
-  overflow: hidden;
-  border-radius: 15px;
+  z-index: 3; /* Assicurati che la card sia sopra l'overlay */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Card: Frontale e Retro */
+.gallery-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease-in-out;
+  border-radius: 15px;
+  z-index: 4; /* Aumenta l'indice per essere sopra lo sfondo */
 }
 
-.gallery-card:hover {
-  transform: scale(1.05);
+.gallery-card:hover .gallery-inner {
+  transform: rotateY(180deg);
 }
 
-/* Immagini della galleria */
+/* Card Frontale */
+.gallery-front,
+.gallery-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  overflow: hidden;
+  z-index: 5; /* Assicurati che siano sopra l'overlay */
+}
+
+/* Immagine della Card Frontale */
+.gallery-front {
+  background: #ffffff;
+}
+
 .gallery-image {
   width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 15px;
+  height: 100%; /* Assicura che l'immagine riempia la card */
   object-fit: cover;
 }
 
-/* Overlay per il testo */
-.gallery-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
+/* Card Retro */
+.gallery-back {
+  background: rgba(0, 0, 0, 0.8);
+  color: #ffffff;
+  transform: rotateY(180deg);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-  border-radius: 15px;
-  z-index: 4; /* Aumenta l'indice per assicurare che sia sopra l'immagine della galleria */
+  padding: 1rem;
 }
 
-.gallery-card:hover .gallery-overlay {
-  opacity: 1;
-}
-
-/* Testo dell'overlay */
 .gallery-caption {
-  color: #fff;
   font-size: 1.5rem;
   font-weight: bold;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
-  padding: 1rem;
   text-align: center;
+  margin-bottom: 10px;
+  z-index: 6; /* Assicurati che il testo sia sopra tutto */
+}
+
+.gallery-description {
+  font-size: 1rem;
+  text-align: center;
+  line-height: 1.5;
+  z-index: 6; /* Testo visibile sopra l'immagine */
+}
+/* Navbar espansa: aggiungi una classe per aumentare lo spazio */
+.body-gallery.navbar-expanded {
+  padding-top: 10vh; /* Aumenta il padding-top per lasciare abbastanza spazio alla navbar espansa */
 }
 
 /* Media query per schermi piccoli (fino a 768px) */
+/* Media query per schermi piccoli (fino a 768px) */
 @media screen and (max-width: 768px) {
   .body-gallery {
-    padding-top: 10vh; /* Aumenta il padding-top quando la navbar è espansa sui dispositivi mobili */
+    padding-top: 10vh; /* Margine iniziale */
+    min-height: auto; /* Adatta l'altezza in base al contenuto */
   }
 
   .body-gallery.navbar-expanded {
-    padding-top: 35vh; /* Imposta un padding maggiore per l'espansione della navbar su dispositivi mobili */
+    padding-top: 35vh; /* Imposta un padding maggiore quando la navbar è espansa per spingere giù il contenuto */
   }
 
   .gallery-title {
-    font-size: 3rem; /* Riduci la dimensione del titolo per gli schermi piccoli */
+    font-size: 2.5rem; /* Riduci la dimensione del titolo per schermi piccoli */
+    padding-top: 10vh;
+  }
+
+  .gallery-card {
+    width: 40vh; /* Adatta la larghezza per schermi piccoli */
+    height: 30vh; /* Altezza ridotta per schermi piccoli */
+  }
+
+  .gallery-caption {
+    font-size: 1.2rem; /* Riduci leggermente il testo per adattarsi agli schermi piccoli */
+  }
+
+  .gallery-description {
+    font-size: 1rem; /* Adatta la descrizione per schermi piccoli */
   }
 }
 
 /* Media query per tablet (da 769px a 1000px) */
 @media screen and (min-width: 769px) and (max-width: 1000px) {
   .body-gallery {
-    padding-top: 150px; /* Margine medio per tablet */
+    padding-top: 100px;
+    min-height: auto; /* Adatta l'altezza per migliorare la visualizzazione */
   }
 
+
+
   .body-gallery.navbar-expanded {
-    padding-top: 250px; /* Padding maggiore quando la navbar è espansa su tablet */
+    padding-top: 250px; /* Imposta un padding-top maggiore quando la navbar è espansa */
   }
 
   .gallery-title {
-    font-size: 3.5rem; /* Dimensione media per tablet */
+    font-size: 3rem; /* Dimensione media per adattarsi ai tablet */
+  }
+
+  .gallery-card {
+    width: 90vh; /* Due card affiancate su tablet */
+    height: 40vh; /* Altezza media per le card */
+  }
+
+  .gallery-caption {
+    font-size: 1.4rem; /* Adatta il testo per i tablet */
+  }
+
+  .gallery-description {
+    font-size: 1.1rem; /* Adatta la descrizione per tablet */
   }
 }

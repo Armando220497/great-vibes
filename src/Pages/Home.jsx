@@ -1,5 +1,7 @@
 import { useState } from "react";
 import NavbarCustom from "../components/navbar.jsx";
+import Orari from "../components/orari.jsx";
+
 import "../style/Home.css";
 
 function Home() {
@@ -12,6 +14,7 @@ function Home() {
   return (
     <>
       <NavbarCustom onToggle={handleNavbarToggle} />
+      <Orari />
       <div className={`body-home ${isNavbarExpanded ? "navbar-expanded" : ""}`}>
         <div className="overlay-home"></div>
         <div className="content-home">

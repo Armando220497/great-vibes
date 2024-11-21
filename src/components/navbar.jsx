@@ -6,7 +6,7 @@ import Navbar from "react-bootstrap/Navbar";
 import PropTypes from "prop-types"; // Importa PropTypes
 import "../style/navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faMartiniGlass } from "@fortawesome/free-solid-svg-icons";
 
 function NavbarCustom({ onToggle = () => {} }) {
   const [expanded, setExpanded] = useState(false);
@@ -27,13 +27,16 @@ function NavbarCustom({ onToggle = () => {} }) {
         expanded={expanded}
         style={{ zIndex: 1000 }} // Aggiungi un alto z-index per assicurare che sia sopra il contenuto
       >
-        <Container>
+        <Container fluid>
           {/* Bottone di toggle per la visualizzazione su schermi piccoli con icona personalizzata */}
           <Navbar.Toggle
             aria-controls="basic-navbar-nav"
             onClick={handleToggle}
           >
-            <FontAwesomeIcon className="toggle-icon" icon={faBars} />
+            <FontAwesomeIcon
+              className={`toggle-icon ${expanded ? "rotated" : ""}`}
+              icon={faMartiniGlass}
+            />
           </Navbar.Toggle>
 
           {/* Contenuto della navbar che verrà collassato */}
@@ -42,25 +45,36 @@ function NavbarCustom({ onToggle = () => {} }) {
             className="justify-content-center"
           >
             <Nav className="me-auto custom-navbar-link">
-              <Nav.Link className="custom-navbar-link" as={Link} to="/">
+              <Nav.Link
+                className="custom-navbar-link shimmer-link"
+                as={Link}
+                to="/"
+              >
                 Home
               </Nav.Link>
-              <Nav.Link className="custom-navbar-link" as={Link} to="/menu">
+              <Nav.Link
+                className="custom-navbar-link shimmer-link"
+                as={Link}
+                to="/menu"
+              >
                 Menu
               </Nav.Link>
-              <Nav.Link className="custom-navbar-link" as={Link} to="/eventi">
+              <Nav.Link
+                className="custom-navbar-link shimmer-link"
+                as={Link}
+                to="/eventi"
+              >
                 Eventi
               </Nav.Link>
-              <Nav.Link className="custom-navbar-link" as={Link} to="/gallery">
+              <Nav.Link
+                className="custom-navbar-link shimmer-link"
+                as={Link}
+                to="/gallery"
+              >
                 Gallery
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
-
-          {/* Orari apertura posizionati a destra */}
-          <div className="orari ms-auto">
-            <p>Orari apertura: Lun-Dom 10:00 - 23:00</p>
-          </div>
         </Container>
       </Navbar>
     </>
