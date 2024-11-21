@@ -84,15 +84,12 @@
   color: white;
   font-family: 'Poppins', sans-serif; /* Applica Poppins */
   font-weight: 300;
-  font-size: 0.9rem;
-  margin-top: 0; /* Rimuovi il margine superiore per centrare meglio */
-  height: 100vh; /* Imposta l'altezza pari alla viewport */
-  display: flex;
-  justify-content: center; /* Centra orizzontalmente */
-  align-items: center; /* Centra verticalmente */
-  padding: 20px; /* Padding per evitare che il testo tocchi i bordi */
-  box-sizing: border-box; /* Include il padding nell'altezza */
-}
+   font-size: 0.9rem;
+  height: 100vh;
+  padding-top: 5vh;
+ }
+ 
+ 
 
 /* Titolo della home */
 .title {
