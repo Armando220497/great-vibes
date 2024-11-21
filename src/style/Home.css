@@ -96,6 +96,7 @@
   justify-content: center; /* Centra orizzontalmente */
   align-items: center; /* Centra verticalmente */
   overflow: hidden; /* Evita lo scroll interno non desiderato */
+  padding-top: 10vh;
 }
 
 /* Titolo della home */
