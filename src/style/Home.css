@@ -79,17 +79,24 @@
   text-align: center;
 }
 
-/* Stile generale per la sezione container-presentazione */
 .container-presentazione {
   color: white;
   font-family: 'Poppins', sans-serif; /* Applica Poppins */
   font-weight: 300;
-   font-size: 0.9rem;
-  height: 100vh;
-  padding-top: 5vh;
- }
- 
- 
+  font-size: 0.9rem;
+  padding: 20px; /* Padding per evitare che il testo tocchi i bordi */
+  box-sizing: border-box; /* Include il padding nell'altezza */
+}
+
+ /* Stile generale per la sezione container-presentazione */
+.container-presentazione-section {
+  height: 100vh; /* Altezza della sezione pari alla viewport */
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Centra orizzontalmente */
+  align-items: center; /* Centra verticalmente */
+  overflow: hidden; /* Evita lo scroll interno non desiderato */
+}
 
 /* Titolo della home */
 .title {

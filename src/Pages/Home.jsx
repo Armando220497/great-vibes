@@ -11,6 +11,14 @@ function Home() {
     setIsNavbarExpanded(isExpanded);
   };
 
+  // Funzione per gestire lo scroll verso la sezione successiva
+  const handleScrollDown = () => {
+    const section = document.querySelector(".container-presentazione");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <>
       <NavbarCustom onToggle={handleNavbarToggle} />
@@ -34,19 +42,20 @@ function Home() {
             ></a>
           </div>
         </div>
-        <div className="scroll-down">
+        <div className="scroll-down" onClick={handleScrollDown}>
           <i className="fa-solid fa-angles-down"></i>
         </div>
       </div>
 
       <section
+        className="container-presentazione-section"
         style={{
           justifyContent: "center",
           alignItems: "center",
           display: "flex",
         }}
       >
-        <div className="container-presentazione container ">
+        <div className="container-presentazione container">
           <div className="row">
             <div className="col-12 col-md-6 mb-4 col-style-query">
               <h3 className="mb-4 benvenuti-titolo">
