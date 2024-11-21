@@ -79,13 +79,19 @@
   text-align: center;
 }
 
+/* Stile generale per la sezione container-presentazione */
 .container-presentazione {
- color: white;
- font-family: 'Poppins', sans-serif; /* Applica Poppins */
- font-weight: 300;
+  color: white;
+  font-family: 'Poppins', sans-serif; /* Applica Poppins */
+  font-weight: 300;
   font-size: 0.9rem;
- margin-top: 20vh;
- 
+  margin-top: 0; /* Rimuovi il margine superiore per centrare meglio */
+  height: 100vh; /* Imposta l'altezza pari alla viewport */
+  display: flex;
+  justify-content: center; /* Centra orizzontalmente */
+  align-items: center; /* Centra verticalmente */
+  padding: 20px; /* Padding per evitare che il testo tocchi i bordi */
+  box-sizing: border-box; /* Include il padding nell'altezza */
 }
 
 /* Titolo della home */
