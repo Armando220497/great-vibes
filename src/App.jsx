@@ -7,6 +7,7 @@ import Home from "./Pages/Home";
 import Menu from "./Pages/Menu";
 import Eventi from "./Pages/Eventi";
 import Gallery from "./Pages/Gallery";
+import PageNotFound from "./Pages/PageNotFound"; // Importa la pagina di errore
 
 // Definizione delle rotte
 const router = createBrowserRouter(
@@ -26,6 +27,10 @@ const router = createBrowserRouter(
     {
       path: "/gallery",
       element: <Gallery />,
+    },
+    {
+      path: "*", // Match per qualsiasi percorso non definito
+      element: <PageNotFound />, // Mostra la pagina di errore per tutte le rotte non definite
     },
   ],
   {
