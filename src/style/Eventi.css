@@ -1,22 +1,28 @@
-/* Stile generale del body per la pagina Eventi */
+/* =========================== */
+/*       Stile Generale        */
+/* =========================== */
+
+/* Body della pagina Eventi */
 .body-events {
   position: relative; /* Per contenere l'overlay */
   background-image: linear-gradient(rgba(18, 18, 18, 0.5), rgba(18, 18, 18, 0.5)), 
                     url("/istockphoto-1367352845-612x612.jpg"); /* Applica l'overlay con il gradient */
-  min-height: 100vh; /* Usa min-height per permettere alla pagina di estendersi */
+  min-height: 100vh; /* Permette alla pagina di estendersi */
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
-  z-index: 1; /* Assicura che il contenuto sia sotto la navbar */
-  transition: padding-top 0.3s ease-in-out; /* Aggiunta transizione per il padding-top */
+  z-index: 1; /* Sfondo sotto la navbar */
+  transition: padding-top 0.3s ease-in-out; /* Transizione per il padding-top */
 }
 
-/* Navbar espansa - modifica dinamica tramite JavaScript */
 .body-events.navbar-expanded {
-  padding-top: 50vh; /* Aggiungi abbastanza spazio quando la navbar è espansa */
+  padding-top: 50vh; /* Spazio extra per la navbar espansa */
 }
 
-/* Titolo eventi */
+/* =========================== */
+/*       Titolo Eventi         */
+/* =========================== */
+
 .eventi-title {
   font-family: "Great Vibes", cursive;
   font-size: 4rem;
@@ -25,65 +31,70 @@
   margin-bottom: 3%;
   text-decoration: underline 2px;
   margin-top: 8vh;
-  transition: all 0.3s ease-in-out; /* Aggiunta transizione per la fluidità */
+  transition: all 0.3s ease-in-out; /* Transizione fluida */
 }
 
-/* Stile delle card degli eventi */
+/* =========================== */
+/*       Card degli Eventi     */
+/* =========================== */
+
 .card {
-  margin: 0 auto; /* Per allineare le card */
+  margin: 0 auto; /* Allinea le card al centro */
   background-color: rgba(128, 128, 128, 0.27) !important;
   border: none !important;
   color: white !important;
-  border: 3px solid rgba(128, 128, 128, 0.27) !important; /* Bordo */
-  border-radius: 15px; /* Arrotondamento */
+  border: 3px solid rgba(128, 128, 128, 0.27) !important; /* Bordo trasparente */
+  border-radius: 15px; /* Arrotonda gli angoli */
   display: flex;
-  flex-direction: column; /* Per garantire che l'immagine e il contenuto siano in colonna */
-  height: 100%; /* Garantisce che tutte le card abbiano la stessa altezza */
-  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out; /* Fluidità hover */
+  flex-direction: column; /* Disposizione in colonna */
+  height: 100%; /* Altezza uniforme */
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out; /* Effetto hover fluido */
 }
 
 .card:hover {
-  transform: scale(1.05);
-  background-color: rgba(128, 128, 128, 0.35) !important; /* Aggiunta di un leggero effetto hover */
+  transform: scale(1.05); /* Effetto zoom */
+  background-color: rgba(128, 128, 128, 0.35) !important; /* Hover con sfondo leggero */
 }
 
-/* Media query per schermi piccoli e tablet */
+/* =========================== */
+/*       Media Queries         */
+/* =========================== */
 
 /* Cellulari (fino a 768px) */
 @media screen and (max-width: 768px) {
   .events-page {
-    padding-top: 150px; /* Aggiungi padding-top solo per compensare la navbar espansa */
-    transition: padding-top 0.3s ease-in-out; /* Transizione per rendere il movimento più fluido */
+    padding-top: 150px; /* Compensa la navbar espansa */
+    transition: padding-top 0.3s ease-in-out; /* Transizione fluida */
   }
 
   .eventi-title {
-    font-size: 3rem; /* Dimensione più piccola per cellulari */
+    font-size: 3rem; /* Ridimensiona per cellulari */
     padding-top: 5vh;
   }
 
   .navbar-collapse {
     position: relative;
     z-index: 2;
-    transition: all 0.3s ease-in-out; /* Anima il movimento quando si espande/collassa */
+    transition: all 0.3s ease-in-out; /* Anima espansione/collasso */
   }
 
   .body-events {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed;
-    transition: padding-top 0.3s ease-in-out; /* Migliora la fluidità del padding-top */
+    background-attachment: fixed; /* Sfondo fisso */
+    transition: padding-top 0.3s ease-in-out; /* Fluidità del padding-top */
   }
 
   .body-events.navbar-expanded {
-    padding-top: 50vh; /* Espandi il padding in modo fluido per la navbar espansa */
+    padding-top: 50vh; /* Spazio extra per navbar espansa */
   }
 }
 
 /* Tablet (da 769px a 1000px) */
 @media screen and (min-width: 769px) and (max-width: 1000px) {
   .events-page {
-    padding-top: 150px; /* Aggiungi padding-top solo per compensare la navbar espansa */
+    padding-top: 150px; /* Compensa la navbar espansa */
   }
 
   .eventi-title {
@@ -91,6 +102,6 @@
   }
 
   .body-events.navbar-expanded {
-    padding-top: 200px; /* Espandi il padding in modo sufficiente per tablet */
+    padding-top: 200px; /* Spazio sufficiente per tablet */
   }
 }

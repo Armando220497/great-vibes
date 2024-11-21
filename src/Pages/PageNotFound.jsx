@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import "../style/PageNotFound.css"; // Crea un file CSS per lo stile personalizzato
+import "../style/PageNotFound.css";
 
 function PageNotFound() {
   const navigate = useNavigate();

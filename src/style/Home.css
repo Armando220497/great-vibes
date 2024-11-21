@@ -1,4 +1,8 @@
-/* Stile generale per il body della home */
+/* =========================== */
+/*       Stile Generale        */
+/* =========================== */
+
+/* Body della home */
 .body-home {
   background-image: url("/wallpaper.jpg");
   background-repeat: no-repeat;
@@ -10,21 +14,34 @@
   transition: padding-top 0.3s ease-in-out;
 }
 
-/* Quando la navbar è espansa su schermi piccoli */
 .body-home.navbar-expanded {
   padding-top: 200px; /* Aggiungi spazio per la navbar espansa */
 }
 
-.scroll-down {
+/* Overlay */
+.overlay-home {
   position: absolute;
-  bottom: 20px; /* Posiziona l'icona vicino al bordo inferiore */
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2; /* Deve stare sopra l'overlay */
-  text-align: center;
-  color: rgba(255, 255, 255, 0.618);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(18, 18, 18, 0.5);
+  z-index: 1; /* Overlay sotto la navbar */
 }
 
+/* Contenuto */
+.content-home {
+  position: relative;
+  z-index: 2; /* Assicurati che il contenuto sia sopra l'overlay */
+  color: white;
+  text-align: center;
+}
+
+/* =========================== */
+/*       Titoli e Testi        */
+/* =========================== */
+
+/* Titolo principale */
 .title {
   font-family: 'Great Vibes', cursive;
   font-size: 9.5rem;
@@ -32,12 +49,10 @@
   color: rgb(255, 255, 255);
   text-align: center;
   margin-top: 25vh;
-
 }
 
-
-
-.benvenuti-titolo{
+/* Benvenuti titolo */
+.benvenuti-titolo {
   font-family: 'Great Vibes', cursive;
   font-size: 4rem;
   font-weight: 500;
@@ -45,9 +60,48 @@
   text-align: center;
   text-decoration: underline 2px;
 }
+
+/* Presentazione */
+.container-presentazione {
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-size: 0.9rem;
+  padding: 20px; /* Padding per evitare che il testo tocchi i bordi */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row; /* Testo e immagine affiancati su schermi grandi */
+}
+
+.container-presentazione-section {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Centra orizzontalmente */
+  align-items: center; /* Centra verticalmente */
+  overflow: hidden; /* Evita lo scroll interno non desiderato */
+  padding-top: 10vh;
+}
+
+/* =========================== */
+/*       Scroll e Social       */
+/* =========================== */
+
+/* Scroll down */
+.scroll-down {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.618);
+}
+
 .scroll-down i {
   font-size: 5rem; /* Dimensione dell'icona */
   animation: bounce 2s infinite; /* Aggiunge un effetto rimbalzo */
+  cursor: pointer;
 }
 
 /* Animazione di rimbalzo */
@@ -60,77 +114,31 @@
   }
 }
 
-/* Overlay per il contenuto della home */
-.overlay-home {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(18, 18, 18, 0.5);
-  z-index: 1; /* Overlay sotto la navbar */
-}
-
-/* Contenuto della home */
-.content-home {
-  position: relative;
-  z-index: 2; /* Assicurati che il contenuto sia sopra l'overlay */
-  color: white;
-  text-align: center;
-}
-
-.container-presentazione {
-  color: white;
-  font-family: 'Poppins', sans-serif; /* Applica Poppins */
-  font-weight: 300;
-  font-size: 0.9rem;
-  padding: 20px; /* Padding per evitare che il testo tocchi i bordi */
-  box-sizing: border-box; /* Include il padding nell'altezza */
-}
-
- /* Stile generale per la sezione container-presentazione */
-.container-presentazione-section {
-  height: 100vh; /* Altezza della sezione pari alla viewport */
-  width: 100%;
-  display: flex;
-  justify-content: center; /* Centra orizzontalmente */
-  align-items: center; /* Centra verticalmente */
-  overflow: hidden; /* Evita lo scroll interno non desiderato */
-  padding-top: 10vh;
-}
-
-/* Titolo della home */
-.title {
-  font-family: 'Great Vibes', cursive;
-  font-size: 9.5rem;
-  font-weight: 500;
-  color: rgb(255, 255, 255);
-  text-align: center;
-  margin-top: 25vh;
-}
-
-.social a{
+/* Social */
+.social a {
   justify-content: center;
   margin-top: 20px;
   color: white;
   font-size: 2.0rem;
   text-decoration: none;
   padding: 10px;
-  padding-top: 0px;
 }
 
-.social a:hover{
+.social a:hover {
   transform: scale(1.2);
   transition: all 0.2s ease-in-out;
   cursor: pointer;
-  text-decoration: none;
 }
+
+/* =========================== */
+/*       Immagini Profilo      */
+/* =========================== */
 
 .proprietario-img-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%; /* Adatta all'altezza del contenitore */
+  height: 100%;
   width: 100%;
 }
 
@@ -140,58 +148,101 @@
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
-  height: 100%; /* Si ridimensiona automaticamente */
+  height: 100%;
 }
 
-/* Media query per schermi piccoli (fino a 768px) */
+/* =========================== */
+/*        Media Queries        */
+/* =========================== */
+
+/* Schermi piccoli (fino a 768px) */
 @media screen and (max-width: 768px) {
   .body-home {
-      padding-top: 60px; /* Padding standard per navbar chiusa */
+    padding-top: 60px; /* Padding standard per navbar chiusa */
   }
 
   .body-home.navbar-expanded {
-      padding-top: 200px; /* Padding aumentato per navbar espansa */
+    padding-top: 200px; /* Padding aumentato per navbar espansa */
   }
 
   .title {
-      font-size: 3rem; /* Dimensione del testo più piccola per cellulari */
-      margin-top: 30vh; /* Compensa il margine superiore su dispositivi mobili */
+    font-size: 3rem; /* Dimensione del testo più piccola per cellulari */
+    margin-top: 30vh; /* Compensa il margine superiore su dispositivi mobili */
   }
 
   .proprietario-img {
-      height: 300px; /* Altezza fissa per l'immagine su schermi piccoli */
-      width: 100%; /* Occupa tutta la larghezza del contenitore */
-      background-size: cover; /* Assicura che l'immagine copra tutto il contenitore */
-      margin-top: 20px;
-      margin-bottom: 20px;
+    height: 300px;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 
   .proprietario-img-wrapper {
-      height: auto; /* Imposta l'altezza automatica del wrapper */
+    height: auto;
+  }
+
+  .container-presentazione-section {
+    height: auto;
+    min-height: 100vh;
+    padding-top: 80px;
+  }
+
+  .container-presentazione {
+    flex-direction: column; /* Disposizione verticale su schermi piccoli */
+    align-items: center;
+    text-align: center;
+  }
+
+  .col-style-query {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .benvenuti-titolo {
+    font-size: 2.5rem; /* Riduci la dimensione del titolo per schermi piccoli */
   }
 }
 
-/* Media query per tablet (da 769px a 1000px) */
+/* Tablet (769px a 1000px) */
 @media screen and (min-width: 769px) and (max-width: 1000px) {
   .body-home {
-      padding-top: 100px; /* Margine medio per tablet */
+    padding-top: 100px;
   }
 
   .body-home.navbar-expanded {
-      padding-top: 220px; /* Padding maggiore quando la navbar è espansa su tablet */
+    padding-top: 220px;
   }
 
   .title {
-      font-size: 5rem; /* Dimensione media per tablet */
+    font-size: 5rem;
+  }
+
+  .container-presentazione-section {
+    height: auto;
+    min-height: 100vh;
+    padding-top: 100px;
+  }
+
+  .container-presentazione {
+    flex-direction: row;
+    text-align: left;
+    gap: 20px;
+  }
+
+  .col-style-query {
+    width: 50%;
+  }
+
+  .benvenuti-titolo {
+    font-size: 3.5rem;
   }
 
   .proprietario-img {
-      height: 400px; /* Altezza per tablet, leggermente maggiore rispetto ai cellulari */
-      width: 100%;
-      background-size: cover; /* Assicura che l'immagine copra tutto il contenitore */
+    height: 400px;
+    width: 100%;
   }
 
   .proprietario-img-wrapper {
-      height: auto; /* Imposta l'altezza automatica del wrapper */
+    height: auto;
   }
 }

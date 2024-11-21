@@ -1,16 +1,18 @@
-/* Navbar Styles */
+/* =========================== */
+/*        Navbar Styles        */
+/* =========================== */
+
 .navbar {
   background-color: transparent !important; /* Sfondo trasparente */
-  font-family: 'Poppins', sans-serif; /* Applica Poppins */
+  font-family: 'Poppins', sans-serif; /* Font Poppins */
   padding: 15px 20px; /* Margini interni */
-  width: 100%; /* Occupa l'intera larghezza */
-  z-index: 100; /* Assicura che sia sopra tutto */
+  width: 100%; /* Larghezza piena */
+  z-index: 100; /* Sopra altri elementi */
   position: absolute !important;
   top: 0;
   padding-left: 0px;
 }
 
-/* Link della navbar */
 .custom-navbar-link .nav-link {
   color: white !important;
   font-weight: 300;
@@ -18,7 +20,10 @@
   margin-right: 20px;
 }
 
-/* Effetto hover con shimmer */
+/* =========================== */
+/*    Shimmer Link Effects     */
+/* =========================== */
+
 .shimmer-link {
   position: relative;
   color: white;
@@ -61,19 +66,26 @@
   }
 }
 
-/* Toggle Icon */
+/* =========================== */
+/*        Toggle Icon          */
+/* =========================== */
+
 .toggle-icon {
   color: #ffffff;
-  font-size: 3rem;
-  border: none; /* Rimuove il bordo del bottone di toggle */
-  outline: none; /* Rimuove eventuali contorni di messa a fuoco */
-  box-shadow: none; /* Rimuove l'ombra del bordo */
-  transition: transform 0.3s ease-in-out; /* Transizione per la rotazione */
+  font-size: 2.5rem;
+  border: none; /* Rimuove il bordo */
+  outline: none; /* Rimuove contorni */
+  box-shadow: none; /* Rimuove ombre */
+  transition: transform 0.3s ease-in-out;
 }
 
 .toggle-icon.rotated {
-  transform: rotate(45deg); /* Rotazione di 45 gradi quando la navbar è espansa */
+  transform: rotate(45deg); /* Rotazione quando la navbar è espansa */
 }
+
+/* =========================== */
+/*     Responsive Styles       */
+/* =========================== */
 
 /* Media query per schermi piccoli */
 @media screen and (max-width: 768px) {
@@ -94,9 +106,10 @@
     padding-left: 0px;
   }
 
-  .navbar-toggler{
+  .navbar-toggler {
     padding-left: 0px;
   }
+
   .custom-navbar-link .nav-link {
     margin-left: 0;
     padding-left: 0;
@@ -104,6 +117,7 @@
   }
 }
 
+/* Media query per schermi medi */
 @media screen and (min-width: 769px) and (max-width: 1000px) {
   .orari {
     display: none;

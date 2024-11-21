@@ -5,8 +5,8 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: #121212; /* Colore di sfondo scuro */
-    color: #ffffff; /* Testo bianco */
+    background-color: #121212; 
+    color: #ffffff; 
   }
   
   .page-not-found h1 {
@@ -23,7 +23,7 @@
     padding: 10px 20px;
     font-size: 1rem;
     color: black;
-    background-color: white; /* Colore del pulsante */
+    background-color: white; 
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -31,7 +31,6 @@
   }
   
   .go-back-btn:hover {
-    background-color: white ; /* Colore del pulsante quando si passa sopra */
-    transform: scale(1.1);
+    background-color: white ; 
   }
   
