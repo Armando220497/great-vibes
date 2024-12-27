@@ -6,7 +6,7 @@
 .body-events {
   position: relative; /* Per contenere l'overlay */
   background-image: linear-gradient(rgba(18, 18, 18, 0.5), rgba(18, 18, 18, 0.5)), 
-                    url("/istockphoto-1367352845-612x612.jpg"); /* Applica l'overlay con il gradient */
+                    url("/people.webp"); /* Applica l'overlay con il gradient */
   min-height: 100vh; /* Permette alla pagina di estendersi */
   background-repeat: no-repeat;
   background-size: cover;

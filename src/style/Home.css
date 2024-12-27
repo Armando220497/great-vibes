@@ -4,7 +4,7 @@
 
 /* Body della home */
 .body-home {
-  background-image: url("/wallpaper.jpg");
+  background-image: url("/wallpaper.webp");
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -143,7 +143,7 @@
 }
 
 .proprietario-img {
-  background-image: url("/proprietario.jpg");
+  background-image: url("/proprietario.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

@@ -7,34 +7,34 @@ import "../style/Gallery.css";
 function Gallery() {
   const images = [
     {
-      url: "/gallery1.jpg",
+      url: "/gallery1.webp",
       caption: "La magia del nostro bar",
       description: "Scopri il nostro ambiente elegante e confortevole.",
     },
     {
-      url: "/gallery2.jpg",
+      url: "/gallery2.webp",
       caption: "Cocktail esclusivi",
       description:
         "Assaggia i cocktail esclusivi preparati dai nostri bartender.",
     },
     {
-      url: "/gallery3.jpg",
+      url: "/gallery3.webp",
       caption: "Musica e divertimento",
       description: "Vivi la notte con musica live e tanto divertimento.",
     },
     {
-      url: "/gallery5.jpeg",
+      url: "/gallery5.webp",
       caption: "Festeggia con noi",
       description:
         "Organizza le tue feste nel nostro locale, garantendo momenti indimenticabili.",
     },
     {
-      url: "/gallery4.jpg",
+      url: "/gallery4.webp",
       caption: "Momenti da ricordare",
       description: "Cattura i momenti più belli della tua serata da noi.",
     },
     {
-      url: "/gallery6.jpg",
+      url: "/gallery6.webp",
       caption: "La nostra atmosfera",
       description:
         "Atmosfera rilassante e accogliente, perfetta per qualsiasi occasione.",
