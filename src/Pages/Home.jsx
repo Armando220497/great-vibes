@@ -1,6 +1,5 @@
 import { useState } from "react";
 import NavbarCustom from "../components/navbar.jsx";
-import Orari from "../components/orari.jsx";
 
 import "../style/Home.css";
 
@@ -22,7 +21,6 @@ function Home() {
   return (
     <>
       <NavbarCustom onToggle={handleNavbarToggle} />
-      <Orari />
       <div className={`body-home ${isNavbarExpanded ? "navbar-expanded" : ""}`}>
         <div className="overlay-home"></div>
         <div className="content-home">
@@ -55,20 +53,20 @@ function Home() {
           display: "flex",
         }}
       >
-        <div className="container-presentazione container">
+        <div className="container-presentazione ">
           <div className="row">
             <div className="col-12 col-md-6 mb-4 col-style-query">
               <h3 className="mb-4 benvenuti-titolo">
                 Benvenuti al Great Vibes!
               </h3>
-              <p style={{ textAlign: "start", marginLeft: "10px" }}>
+              <p>
                 Se stai cercando un luogo dove vivere momenti indimenticabili,
                 il <strong>Great Vibes Bar</strong> è la tua destinazione
                 ideale. Situato in una posizione accogliente e moderna, il
                 nostro bar è pensato per chi vuole rilassarsi, divertirsi e
                 assaporare il meglio in un&apos;atmosfera unica.
               </p>
-              <ul>
+              <ul className="features-list">
                 <li>
                   <h4>🌟 Atmosfera Unica</h4>
                   <p>

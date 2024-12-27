@@ -15,9 +15,7 @@
   transition: padding-top 0.3s ease-in-out; /* Transizione per il padding-top */
 }
 
-.body-events.navbar-expanded {
-  padding-top: 50vh; /* Spazio extra per la navbar espansa */
-}
+
 
 /* =========================== */
 /*       Titolo Eventi         */
@@ -29,7 +27,6 @@
   font-weight: 500;
   color: rgb(255, 255, 255);
   margin-bottom: 3%;
-  text-decoration: underline 2px;
   margin-top: 8vh;
   transition: all 0.3s ease-in-out; /* Transizione fluida */
 }
@@ -63,19 +60,26 @@
 /* Cellulari (fino a 768px) */
 @media screen and (max-width: 768px) {
   .events-page {
-    padding-top: 150px; /* Compensa la navbar espansa */
+    padding-top: 170px; /* Compensa la navbar espansa */
     transition: padding-top 0.3s ease-in-out; /* Transizione fluida */
   }
 
   .eventi-title {
     font-size: 3rem; /* Ridimensiona per cellulari */
-    padding-top: 5vh;
+    padding-top: 3vh;
+    margin-top: 4vh;
   }
+
 
   .navbar-collapse {
     position: relative;
     z-index: 2;
     transition: all 0.3s ease-in-out; /* Anima espansione/collasso */
+  }
+
+
+  .body-events.navbar-expanded {
+    padding-top: 30vh;
   }
 
   .body-events {
@@ -87,7 +91,7 @@
   }
 
   .body-events.navbar-expanded {
-    padding-top: 50vh; /* Spazio extra per navbar espansa */
+    padding-top: 35vh; /* Spazio extra per navbar espansa */
   }
 }
 

@@ -8,11 +8,14 @@
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  overflow: hidden;
   min-height: 100vh;
-  padding-top: 60px; /* Compensa l'altezza della navbar quando è chiusa */
-  transition: padding-top 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 60px; /* Compensa la navbar */
 }
+
 
 .body-home.navbar-expanded {
   padding-top: 200px; /* Aggiungi spazio per la navbar espansa */
@@ -27,6 +30,7 @@
   height: 100%;
   background-color: rgba(18, 18, 18, 0.5);
   z-index: 1; /* Overlay sotto la navbar */
+
 }
 
 /* Contenuto */
@@ -35,6 +39,8 @@
   z-index: 2; /* Assicurati che il contenuto sia sopra l'overlay */
   color: white;
   text-align: center;
+  margin-bottom: 20px;
+
 }
 
 /* =========================== */
@@ -48,7 +54,6 @@
   font-weight: 500;
   color: rgb(255, 255, 255);
   text-align: center;
-  margin-top: 25vh;
 }
 
 /* Benvenuti titolo */
@@ -58,29 +63,35 @@
   font-weight: 500;
   color: rgb(255, 255, 255);
   text-align: center;
-  text-decoration: underline 2px;
+  
+
+  
 }
 
 /* Presentazione */
 .container-presentazione {
-  color: white;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 300;
-  font-size: 0.9rem;
-  padding: 20px; /* Padding per evitare che il testo tocchi i bordi */
-  box-sizing: border-box;
+  max-width: 100%;
   display: flex;
-  flex-direction: row; /* Testo e immagine affiancati su schermi grandi */
+  flex-wrap: wrap;
+  gap: 20px;
+ 
+ 
 }
 
 .container-presentazione-section {
-  height: 100vh;
   width: 100%;
+  background-color: #121212;
+  color: white;
+  padding: 40px 20px;
   display: flex;
-  justify-content: center; /* Centra orizzontalmente */
-  align-items: center; /* Centra verticalmente */
-  overflow: hidden; /* Evita lo scroll interno non desiderato */
-  padding-top: 10vh;
+justify-content: space-around;  
+align-self: center;
+  
+}
+
+.features-list{
+  list-style: none;
+  padding-left: 0px ; 
 }
 
 /* =========================== */
@@ -99,7 +110,7 @@
 }
 
 .scroll-down i {
-  font-size: 5rem; /* Dimensione dell'icona */
+  font-size: 7vh; /* Dimensione dell'icona */
   animation: bounce 2s infinite; /* Aggiunge un effetto rimbalzo */
   cursor: pointer;
 }
@@ -167,7 +178,8 @@
 
   .title {
     font-size: 3rem; /* Dimensione del testo più piccola per cellulari */
-    margin-top: 30vh; /* Compensa il margine superiore su dispositivi mobili */
+   
+   
   }
 
   .proprietario-img {
@@ -184,13 +196,13 @@
   .container-presentazione-section {
     height: auto;
     min-height: 100vh;
-    padding-top: 80px;
+    padding-top: 3vh;
   }
 
   .container-presentazione {
     flex-direction: column; /* Disposizione verticale su schermi piccoli */
-    align-items: center;
-    text-align: center;
+    align-items: start;
+    text-align: start;
   }
 
   .col-style-query {
@@ -201,6 +213,18 @@
   .benvenuti-titolo {
     font-size: 2.5rem; /* Riduci la dimensione del titolo per schermi piccoli */
   }
+
+  /* Scroll down */
+.scroll-down {
+  bottom: 10vh;
+
+}
+
+.scroll-down i {
+  font-size: 4vh; /* Dimensione dell'icona */
+
+}
+
 }
 
 /* Tablet (769px a 1000px) */

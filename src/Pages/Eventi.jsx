@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import NavbarCustom from "../components/navbar";
-import Orari from "../components/orari";
 
 import "../style/Eventi.css";
 
@@ -28,12 +27,11 @@ function Events() {
 
   return (
     <>
-      <Orari />
       <div className="body-events">
         <NavbarCustom onToggle={handleNavbarToggle} />
         <Container
           fluid
-          className="events-page px-5"
+          className="events-page "
           style={{ paddingTop: `${navbarHeight}px` }}
         >
           <section className="featured-events py-5">

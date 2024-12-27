@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import NavbarCustom from "../components/navbar";
-import Orari from "../components/orari.jsx";
 import "../style/Gallery.css";
 
 function Gallery() {
@@ -49,7 +48,6 @@ function Gallery() {
 
   return (
     <>
-      <Orari />
       <div
         className={`body-gallery ${isNavbarExpanded ? "navbar-expanded" : ""}`}
       >

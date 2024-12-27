@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import NavbarCustom from "../components/navbar.jsx";
-import Orari from "../components/orari.jsx";
 
 import "../style/Menu.css";
 
@@ -28,7 +27,6 @@ function Menu() {
 
   return (
     <>
-      <Orari />
       <div className="body-menu">
         <div className="overlay-menu"></div>
         <NavbarCustom onToggle={handleNavbarToggle} />
