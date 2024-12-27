@@ -1,8 +1,6 @@
-import "../style/Footer.css"; // Stile personalizzato del footer
+import "../style/footer.css"; // Stile personalizzato del footer
 
 function Footer() {
-  const currentYear = new Date().getFullYear();
-
   return (
     <footer className="footer">
       <div className="container">
