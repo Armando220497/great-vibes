@@ -3,12 +3,11 @@
 /* =========================== */
 
 .navbar {
-  background-color: transparent !important; /* Sfondo trasparente */
+  background-color: #121212 !important ; /* Sfondo trasparente */
   font-family: 'Poppins', sans-serif; /* Font Poppins */
-  padding: 15px 20px; /* Margini interni */
   width: 100%; /* Larghezza piena */
   z-index: 100; /* Sopra altri elementi */
-  position: absolute !important;
+  position: fixed !important;
   top: 0;
   padding-left: 0px;
 }
@@ -72,7 +71,7 @@
 
 .toggle-icon {
   color: #ffffff;
-  font-size: 2.2rem;
+  font-size: 2rem;
   border: none; /* Rimuove il bordo */
   outline: none; /* Rimuove contorni */
   box-shadow: none; /* Rimuove ombre */
@@ -117,8 +116,7 @@
   }
 
   .navbar{
-    background-color: #282828 !important;
-    position: fixed !important;
+    background-color: #121212 !important;
     padding-top: 1vh;
     
   padding: bottom 1vh;
